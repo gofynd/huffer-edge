@@ -1,0 +1,24 @@
+{
+  "name": "huffer",
+  "version": "0.1.0",
+  "description": "Huffer Edge CDN",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "private": true,
+  "author": "Jigar Dafda<jigar.dafda@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "path-to-regexp": "^6.1.0",
+    "sharp": "^0.26.0"
+  },
+  "devDependencies": {
+    "@slack/web-api": "^5.11.0",
+    "aws-sdk": "^2.747.0",
+    "js-yaml": "^3.14.0",
+    "mocha": "^8.1.3",
+    "shelljs": "^0.8.4"
+  }
+}
