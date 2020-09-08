@@ -20,11 +20,7 @@ class HufferEdge {
       signatureVersion: "v4",
     });
   }
-  log() {
-    logger.info(this.config.aws);
-  }
   async handler(event, context, callback) {
-    this.log();
     logger.info(event);
     const { request, response } = event.Records[0].cf;
 
