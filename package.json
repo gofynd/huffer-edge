@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha"
   },
-  "private": true,
+  "private": false,
   "author": "Jigar Dafda<jigar.dafda@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
