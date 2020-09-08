@@ -2,8 +2,8 @@ class HufferConfig {
   /**
    * @typedef config {
    *    aws:[],
-   *    patternMap: {
-   *        // Product Images
+   *    directories: {
+   *        // Images
    *        "/media/": {
    *          namespace: "hdn-media",
    *          interceptors: [()=>{}]
@@ -14,7 +14,7 @@ class HufferConfig {
    */
   constructor(config) {
     this.aws = config.aws;
-    this.patternMap = config.patternMap;
+    this.directories = config.directories;
 
     this.aws.forEach((c) => {
       c.CloudFrontOriginBucket = c.CloudFrontOrigin.replace(

@@ -512,7 +512,7 @@ function txtToOptions(dSplit, originalFormat) {
 const cache = {};
 function getCachedFinalInterceptMap(config, bucket) {
   const awsConfig = config.getAWSConfigForBucket(bucket);
-  const InterceptSubPatternMap = config.patternMap;
+  const directories = config.directories;
 
   const { CloudFrontOriginBucket, InterceptPrefixs } = awsConfig;
   if (cache[CloudFrontOriginBucket]) {
@@ -520,10 +520,10 @@ function getCachedFinalInterceptMap(config, bucket) {
   }
   const InterceptMapX = {};
   InterceptPrefixs.forEach((ip) => {
-    Object.keys(InterceptSubPatternMap).forEach((k) => {
+    Object.keys(directories).forEach((k) => {
       const fk = path.join(ip, k);
       // Clone object so prefix doesn't override;
-      InterceptMapX[fk] = Object.assign({}, InterceptSubPatternMap[k]);
+      InterceptMapX[fk] = Object.assign({}, directories[k]);
       InterceptMapX[fk].prefix = fk;
       InterceptMapX[fk].prefixRegex = pathToRegexp(fk, null, { end: false });
     });
