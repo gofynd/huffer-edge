@@ -6,7 +6,16 @@
   "scripts": {
     "test": "mocha"
   },
-  "private": false,
+  "keywords": [
+    "image",
+    "sharp",
+    "huffer",
+    "image-processing",
+    "aws",
+    "aws-lambda",
+    "lambda-edge",
+    "aws-nodejs"
+  ],
   "author": "Jigar Dafda<jigar.dafda@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
