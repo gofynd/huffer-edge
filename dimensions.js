@@ -389,7 +389,7 @@ const optMap = {
       q: {
         name: "quality",
         type: "integer",
-        default: 80,
+        default: 90,
       },
       // progressive
       p: {
@@ -420,7 +420,7 @@ const optMap = {
       q: {
         name: "quality",
         type: "integer",
-        default: 80,
+        default: 90,
       },
       // progressive
       p: {

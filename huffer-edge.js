@@ -99,12 +99,15 @@ class HufferEdge {
         // check if images with same name but other supported formats exist on s3
         // so that we can convert them to webp
         if (isWebp) {
-          let pArr = supportImageTypes
+          let imgs = supportImageTypes
             .filter((img) => img.imageType != webpExt)
-            .map((img) => {
+            .map((i) => i.imageType);
+
+          let pArr = [...imgs, ...imgs.map((i) => i.toUpperCase())].map(
+            (img) => {
               let transformer = dutils.getTransformer(
                 this.config,
-                request.uri.replace(`.${webpExt}`, `.${img.imageType}`),
+                request.uri.replace(`.${webpExt}`, `.${img}`),
                 AssetsBucket
               );
               return this.s3
@@ -114,7 +117,8 @@ class HufferEdge {
                 })
                 .promise()
                 .catch((e) => {});
-            });
+            }
+          );
           let s3Objs = await Promise.all(pArr);
           s3Object = s3Objs.find((s) => s && s.ContentLength) || s3Objs[0];
         } else {
