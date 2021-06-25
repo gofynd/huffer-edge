@@ -1,6 +1,6 @@
 {
   "name": "@gofynd/huffer-edge",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Huffer Edge CDN",
   "main": "index.js",
   "scripts": {
@@ -19,11 +19,11 @@
   "author": "Jigar Dafda<jigar.dafda@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "aws-sdk": "^2.825.0",
+    "aws-sdk": "^2.934.0",
     "path-to-regexp": "^6.2.0",
-    "sharp": "^0.27.0"
+    "sharp": "^0.28.3"
   },
   "devDependencies": {
-    "mocha": "^8.2.1"
+    "mocha": "^9.0.1"
   }
 }
