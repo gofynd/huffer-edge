@@ -95,7 +95,7 @@ const optMap = {
         fit: params.f,
         position: params.p.replace("_", ""),
         background: "#" + params.b,
-        withoutEnlargement: params.we,
+        withoutEnlargement: !!JSON.parse(params.we),
       };
       if (fprams.height === 0) {
         delete fprams.height;
