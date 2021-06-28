@@ -1,6 +1,6 @@
 {
   "name": "@gofynd/huffer-edge",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Huffer Edge CDN",
   "main": "index.js",
   "scripts": {

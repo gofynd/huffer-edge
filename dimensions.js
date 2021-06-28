@@ -85,7 +85,7 @@ const optMap = {
       we: {
         name: "withoutEnlargement",
         type: "boolean",
-        default: false,
+        default: true,
       },
     },
     process: (sharpImage, params) => {
