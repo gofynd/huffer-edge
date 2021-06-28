@@ -58,12 +58,6 @@ const optMap = {
         enum: ["cover", "contain", "fill", "inside", "outside"],
         default: "cover",
       },
-      // background color
-      b: {
-        name: "background",
-        type: "color",
-        default: "000000",
-      },
       // position
       p: {
         name: "position",
@@ -81,6 +75,18 @@ const optMap = {
         ],
         default: "center",
       },
+      // background color
+      b: {
+        name: "background",
+        type: "color",
+        default: "000000",
+      },
+      // without enlargement
+      we: {
+        name: "withoutEnlargement",
+        type: "boolean",
+        default: false,
+      },
     },
     process: (sharpImage, params) => {
       const fprams = {
@@ -89,6 +95,7 @@ const optMap = {
         fit: params.f,
         position: params.p.replace("_", ""),
         background: "#" + params.b,
+        withoutEnlargement: params.we,
       };
       if (fprams.height === 0) {
         delete fprams.height;
@@ -100,8 +107,7 @@ const optMap = {
     },
   },
   extend: {
-    desc:
-      "Extends/pads the edges of the image with the provided background colour. This operation will always occur after resizing and extraction, if any.",
+    desc: "Extends/pads the edges of the image with the provided background colour. This operation will always occur after resizing and extraction, if any.",
     params: {
       t: {
         name: "top",
@@ -175,8 +181,7 @@ const optMap = {
     },
   },
   trim: {
-    desc:
-      'Trim "boring" pixels from all edges that contain values similar to the top-left pixel. Images consisting entirely of a single colour will calculate "boring" using the alpha channel, if any.',
+    desc: 'Trim "boring" pixels from all edges that contain values similar to the top-left pixel. Images consisting entirely of a single colour will calculate "boring" using the alpha channel, if any.',
     params: {
       t: {
         name: "threshold",
@@ -316,8 +321,7 @@ const optMap = {
     },
   },
   linear: {
-    desc:
-      "Apply the linear formula a * input + b to the image (levels adjustment)",
+    desc: "Apply the linear formula a * input + b to the image (levels adjustment)",
     params: {
       a: {
         name: "a",
